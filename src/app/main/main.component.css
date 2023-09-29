@@ -100,9 +100,18 @@ section {
   transition: 0.5s ease-in-out;
 }
 
-@media(max-width: 767px) {
+.main-image {
+  width: 100%; /* Default width for .main-image */
+}
+
+/* Media query for screens up to 767px */
+@media (max-width: 767px) {
   .h4-double {
-    display: none;
+    display: none; /* Hide elements with class .h4-double */
+  }
+
+  .main-image {
+    width: 400px; /* Adjust the width for smaller screens */
   }
 }
 
