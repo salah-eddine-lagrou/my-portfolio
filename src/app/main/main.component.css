@@ -1,0 +1,108 @@
+section {
+  color: white;
+}
+
+.first-section {
+  height: 100vh;
+  background-color: #35353B;
+}
+/* Style for the section */
+.first-section {
+  display: flex;
+  align-items: center; /* Vertically center content */
+}
+
+/* Style for the container */
+.first-section .container {
+  width: 100%; /* Adjust width as needed */
+}
+
+/* Style for the columns */
+.first-section .col {
+  margin: auto;
+}
+
+/* Media query to adjust height when columns stack vertically */
+@media (max-width: 767px) {
+  .first-section {
+    height: 100%; /* Set height to 100% when columns stack vertically */
+  }
+}
+
+
+.about-section {
+  height: 100vh;
+  /* background-color: #30323B; */
+  background-image: linear-gradient(to bottom, #2A2C35, #30323B);
+}
+
+
+.contact-btn {
+  color: #FEC96B;
+  border-radius: 12px;
+  background: none;
+  font-size: 30px;
+  border: solid 5px #FEC96B;
+  padding-inline: 15px;
+  padding-block: 3px;
+}
+
+.image-container {
+  width: auto;
+  position: relative;
+  display: inline-block; /* Allow the container to fit the image dimensions */
+}
+
+.vertical-line {
+  border-left: 3px solid #FEC96B;
+  height: 27%;
+  position: absolute;
+  top: 48%;
+  left: 90%;
+}
+
+.fa-brands {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 30px;
+  transition: 0.5s ease-in-out;
+}
+
+.fa-brands:hover {
+  font-size: 35px;
+  transition: 0.5s ease-in-out;
+}
+
+.row {
+  text-decoration: none;
+}
+
+.about-parag {
+  font-size: 23px;
+}
+
+.col-skill {
+  background-color: #3C3F42;
+  height: 270px;
+  width: 270px;
+  border-radius: 25px;
+  margin-inline: 10px;
+}
+
+.col-skill {
+  transition: 0.5s ease-in-out;
+  margin-top: 25px;
+}
+
+.col-skill:hover {
+  background-color: #FEC96B;
+  color: black;
+  transition: 0.5s ease-in-out;
+}
+
+@media(max-width: 767px) {
+  .h4-double {
+    display: none;
+  }
+}
+

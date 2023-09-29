@@ -1,0 +1,43 @@
+
+nav {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  height: 92px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(53, 53, 59, 0.5); /* Adjust opacity as needed */
+  /* pointer-events: none; */
+}
+
+/* Apply styles for mobile and tablet devices */
+@media (max-width: 767px) {
+  ul {
+    backdrop-filter: blur(10px);
+    background-color: rgba(53, 53, 59, 0.5);
+  }
+
+  li {
+    padding-top: 20px;
+  }
+}
+
+
+/* Your rgba color can be applied to the nav's content */
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search::placeholder {
+  color: rgb(168, 160, 160);
+  font-size: 17px;
+  font-weight: bold;
+}
+input {
+  background-color: #3C3F42 !important;
+  border: none;
+}
+
