@@ -6,21 +6,23 @@ nav {
   height: 92px;
   width: 100%;
   backdrop-filter: blur(10px);
-  background-color: rgba(53, 53, 59, 0.5); /* Adjust opacity as needed */
+  background-color: rgba(53, 53, 59, 0.5);
   /* pointer-events: none; */
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* Apply styles for mobile and tablet devices */
-@media (max-width: 767px) {
-  ul {
-    backdrop-filter: blur(10px);
-    background-color: rgba(53, 53, 59, 0.5);
-  }
-
+@media (max-width: 990px) {
   li {
     padding-top: 20px;
   }
+  #navbarSupportedContent {
+    background: rgba(0, 0, 0, 0.7); /* Adjust alpha for transparency */
+    backdrop-filter: blur(10px);
+    border-radius: 10px; /* Optional: Add rounded corners */
+    margin-top: 15px;
+  }
+
 }
 
 
