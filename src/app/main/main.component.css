@@ -282,3 +282,11 @@ textarea {
   background-color: #3C3F42 !important;
   color: #FEC96B !important;
 }
+
+.center-popup {
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+

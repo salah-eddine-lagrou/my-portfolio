@@ -11,7 +11,9 @@
         <p style="font-size: 35px; padding-inline-start: 56px">
           Full stack web developer <br />Software engineering
         </p>
-        <a href="#contact" class="btn contact-btn contact-me tn my-5">Contact Me</a>
+        <a href="#contact" class="btn contact-btn contact-me tn my-5"
+          >Contact Me</a
+        >
       </div>
       <div class="col text-center">
         <div class="image-container">
@@ -586,10 +588,7 @@
   </div>
 </section>
 
-<section
-  id="contact"
-  class="testimonial-section contact-section text-center"
->
+<section id="contact" class="testimonial-section contact-section text-center">
   <h3
     style="
       font-size: 40px;
@@ -610,42 +609,84 @@
             Explore More or Reach Out for Collaboration
           </h3>
         </div>
-        <form id="form" class="d-flex flex-wrap gap-2">
+        <form
+          [formGroup]="myForm"
+          (ngSubmit)="sendContact()"
+          id="form"
+          class="d-flex flex-wrap gap-2"
+        >
           <div class="container">
             <input
               type="text"
-              name="email"
+              name="from"
+              [(ngModel)]="mail.from"
+              formControlName="from"
               placeholder="Your Email Address"
               class="form-control form-control-lg"
             />
+            <div
+              class="alert alert-danger"
+              *ngIf="myForm.get('from')?.invalid && myForm.get('from')?.touched"
+            >
+              Email is required with the email form
+            </div>
             <div class="row" style="padding-top: 12px">
               <div class="col">
                 <input
                   type="text"
                   name="firstname"
+                  [(ngModel)]="mail.firstName"
+                  formControlName="firstName"
                   placeholder="First Name"
                   class="form-control form-control-lg"
                 />
+                <div
+                class="alert alert-danger"
+                *ngIf="myForm.get('firstName')?.invalid && myForm.get('firstName')?.touched"
+              >
+                FirstName is required
+              </div>
               </div>
               <div class="col">
                 <input
                   type="text"
                   name="lastname"
+                  [(ngModel)]="mail.lastName"
+                  formControlName="lastName"
                   placeholder="Last Name"
                   class="form-control form-control-lg"
                 />
+                <div
+                class="alert alert-danger"
+                *ngIf="myForm.get('lastName')?.invalid && myForm.get('lastName')?.touched"
+              >
+                LastName is required
+              </div>
               </div>
             </div>
             <textarea
               style="margin-top: 12px; height: 120px"
               type="text"
-              name="description"
-              placeholder="Please describe your question or issue here..."
+              name="body"
+              [(ngModel)]="mail.body"
+              formControlName="body"
+              placeholder="Your body message here .."
               class="form-control form-control-lg"
             ></textarea>
+            <div
+                class="alert alert-danger"
+                *ngIf="(myForm.get('body')?.invalid && !myForm.get('body')?.hasError('maxLengthExceeded')) && myForm.get('body')?.touched"
+              >
+                Body is required
+              </div>
+              <div class="alert alert-danger" *ngIf="myForm.get('body')?.hasError('maxLengthExceeded') && myForm.get('body')?.touched">
+                Body exceeds maximum length of 500 characters.
+              </div>
+
             <button
               class="contact-btn w-100 submit-contact"
-              style="margin-top: 12px; font-size: 25px;"
+              style="margin-top: 12px; font-size: 25px"
+              type="submit"
             >
               Submit
             </button>
