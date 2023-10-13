@@ -8,12 +8,12 @@ import { Mail } from '../models/mail.model';
 })
 export class SendContactMailService {
 
-  http :string = '';
+  http :string = 'http://127.0.0.1:8000/api/send-mail';
 
   constructor(private httpClien: HttpClient) { }
 
-  sendToMe(mail :Mail) :Observable<any>{
-    
+  sendToMe(mail :Mail) :Observable<any>{ 
+
     return this.httpClien.post(this.http,mail);
   }
 
